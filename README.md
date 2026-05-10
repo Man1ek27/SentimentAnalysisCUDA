@@ -8,5 +8,5 @@ Running envonment:
 
 Loading Dataset
 ```
-python3 src/download_data.py
+python src/download_data.py
 ```
