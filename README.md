@@ -15,3 +15,9 @@ Loading Dataset
 python src/download_data.py
 ```
 
+#Impersonating-LLM
+Upload the notebook in notebooks/ to Colab and set up it's secrets. You're gonna need a Kaggle Account to execute this notebook.
+kaggle_username = userdata.get('KAGGLE_USERNAME')
+kaggle_key = userdata.get('KAGGLE_KEY')
+
+Kaggle key can be found in Account - Your Api Keys.

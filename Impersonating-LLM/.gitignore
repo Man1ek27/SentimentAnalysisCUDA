@@ -49,3 +49,11 @@ Desktop.ini
 hf_cache/
 datasets/
 transformers/
+
+# Colab-specific artifacts (large files)
+notebooks/checkpoints/
+notebooks/models/
+/tmp/
+*.zip
+trump_data/
+trump_model_checkpoints/
