@@ -1,0 +1,51 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# uv / packaging caches
+.uv/
+.python-version
+
+# Notebook artifacts
+.ipynb_checkpoints/
+
+# Generated data and results
+data/raw/
+data/processed/
+results/
+
+# Keep empty directories in git if needed
+!data/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!results/.gitkeep
+!results/models/.gitkeep
+!results/plots/.gitkeep
+
+# Environment variables and secrets
+.env
+.env.*
+*.env
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+
+# Logs
+*.log
+
+# Hugging Face / model download cache
+.cache/
+hf_cache/
+datasets/
+transformers/
