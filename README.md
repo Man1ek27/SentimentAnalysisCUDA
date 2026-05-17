@@ -10,3 +10,9 @@ Loading Dataset
 ```
 python src/download_data.py
 ```
+
+
+Running Training
+```
+python -m src.train
+```
