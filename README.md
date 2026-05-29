@@ -18,5 +18,11 @@ python src/download_data.py
 
 Running Training
 ```
-python -m src.train
+python -m src.train --model transformer --run-name transformer_run_01
+
+--model [transformer|lstm]
+--run-name [any name for the run, e.g. transformer_run_01]
+--num-heads [number of heads for transformer, e.g. 4]
+--num-layers [number of layers for transformer, e.g. 2]
+--ff-dim [feedforward dimension for transformer, e.g. 128]
 ```
