@@ -38,9 +38,11 @@ No local setup required. Simply open the notebook in Google Colab and run the fi
 ```
 !pip install -q torch transformers datasets pandas kaggle
 ```
+```
 ## Informations & parameters
 --notebook [Trump_Tweet_DistilGPT2_FineTuning.ipynb]
 --model [distilgpt2]
 --epochs [number of training epochs, default: 3]
 --batch-size [batch size for training, default: 16]
 --lr [learning rate, default: 5e-5]
+```
