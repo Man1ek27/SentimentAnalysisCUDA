@@ -25,7 +25,7 @@ python -m src.train --model transformer --run-name transformer_run_01
 --num-heads [number of heads for transformer, e.g. 4]
 --num-layers [number of layers for transformer, e.g. 2]
 --ff-dim [feedforward dimension for transformer, e.g. 128]
-
+```
 # TrumpTweetGenerationCUDA
 ### Colab ver.
 
