@@ -72,7 +72,7 @@ To start the fine-tuning process, run:
 python3 scripts/train_qwen_lora.py
 
 # low VRAM optimization (Optional)
-# The default configuration is optimized for larger GPUs. If you have limited VRAM (e.g.8 GB), use the following command to prevent Out of Memory (OOM) errors:
+# The default configuration is optimized for larger GPUs. If you have limited VRAM (e.g.8 GB), to prevent Out of Memory (OOM) errors use:
 
 python3 scripts/train_qwen_lora.py --batch-size 2 --grad-accum 16 --no-compile
 ```
