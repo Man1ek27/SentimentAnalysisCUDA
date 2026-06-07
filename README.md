@@ -59,7 +59,7 @@ Install the required packages using `pip`. If you are installing globally outsid
 pip install -r requirements_server.txt
 ```
 The training script automatically downloads the Trump's Legacy dataset from Kaggle. To enable this, you need to set up your Kaggle API credentials.
-Place your kaggle.json (downloaded from Kaggle -> Settings -> Create New Token) into the .kaggle directory:
+Place your `kaggle.json` (downloaded from Kaggle -> Settings -> Create New Token) into the `.kaggle` directory:
 ```
 mkdir -p ~/.kaggle
 echo '{"username":"YOUR_KAGGLE_USERNAME","key":"YOUR_KAGGLE_KEY"}' > ~/.kaggle/kaggle.json
@@ -67,7 +67,9 @@ chmod 600 ~/.kaggle/kaggle.json
 ```
 
 To start the fine-tuning process, run:
-```python3 scripts/train_qwen_lora.py
+
+```
+python3 scripts/train_qwen_lora.py
 
 # low VRAM optimization (Optional)
 # The default configuration is optimized for larger GPUs. If you have limited VRAM (e.g.8 GB), use the following command to prevent Out of Memory (OOM) errors:
