@@ -31,7 +31,7 @@ python -m src.train --model transformer --run-name transformer_run_01
 
 Fine-tuning DistilGPT-2 on Trump's Legacy dataset to generate Trump-style tweets using CUDA acceleration.
 
-## Running environment (Google Colab):
+### Running environment (Google Colab):
 
 No local setup required. Simply open the notebook in Google Colab and run the first cell to install the remaining required packages:
 
