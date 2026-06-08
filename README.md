@@ -27,11 +27,11 @@ python -m src.train --model transformer --run-name transformer_run_01
 --ff-dim [feedforward dimension for transformer, e.g. 128]
 ```
 # TrumpTweetGenerationCUDA
-### Colab ver.
+## Colab ver.
 
 Fine-tuning DistilGPT-2 on Trump's Legacy dataset to generate Trump-style tweets using CUDA acceleration.
 
-### Running environment (Google Colab):
+Running environment (Google Colab):
 
 No local setup required. Simply open the notebook in Google Colab and run the first cell to install the remaining required packages:
 
@@ -47,9 +47,8 @@ No local setup required. Simply open the notebook in Google Colab and run the fi
 --lr [learning rate, default: 5e-5]
 ```
 
-### Running locally:
+## Running locally:
 
-## Getting Started
 
 ### 1. Install Dependencies
 
@@ -75,4 +74,20 @@ python3 scripts/train_qwen_lora.py
 # The default configuration is optimized for larger GPUs. If you have limited VRAM (e.g.8 GB), to prevent Out of Memory (OOM) errors use:
 
 python3 scripts/train_qwen_lora.py --batch-size 2 --grad-accum 16 --no-compile
+```
+## Inference & Text Generation
+
+Once the model is trained and the LoRA adapter is saved, you can use the generation script to test how the fine-tuned model performs and verify the results. The script loads the base model, applies your custom adapter, and generates text based on a given prompt.
+
+### Usage
+
+To run the text generation with the default prompt (`"The fake news"`), use the following command:
+
+```bash
+python3 scripts/Ccheck_results.py
+```
+You can pass any custom starting phrase using the `--prompt` flag to see how the fine-tuned model completes the sentence in Trump's characteristic style:
+
+```bash
+python3 scripts/generate.py --prompt "China is"
 ```
