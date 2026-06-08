@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader
 from dataset import AmazonSentimentDataset
 from models.lstm_baseline import LSTMSentimentModel
 from config import (
-    RAW_DATA_DIR,
+    DATA_DIR,
     RESULTS_DIR,
     BATCH_SIZE,
     EPOCHS,
@@ -114,8 +114,8 @@ def main():
     
     # Resolve file paths using configuration
     print("Loading datasets...")
-    train_file = RAW_DATA_DIR / "amazon_reviews_multi_en_train.jsonl"
-    val_file = RAW_DATA_DIR / "amazon_reviews_multi_en_validation.jsonl"
+    train_file = DATA_DIR / "amazon_reviews_multi_en_train.jsonl"
+    val_file = DATA_DIR / "amazon_reviews_multi_en_validation.jsonl"
     
     # Initialize Datasets
     train_dataset = AmazonSentimentDataset(train_file, max_length=MAX_LENGTH)
