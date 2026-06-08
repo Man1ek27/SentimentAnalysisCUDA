@@ -3,32 +3,29 @@
 import json
 from pathlib import Path
 import sys
-
+from config import TRAIN_PATH, TEST_PATH, VAL_PATH
 from datasets import load_dataset
 
-from config import RAW_DATA_DIR
-
-
 def main():
-    dataset = load_dataset("SetFit/amazon_reviews_multi_en")
-    output_path_train = RAW_DATA_DIR / "amazon_reviews_multi_en_train.jsonl"
-    output_path_test = RAW_DATA_DIR / "amazon_reviews_multi_en_test.jsonl"
-    output_path_validation = RAW_DATA_DIR / "amazon_reviews_multi_en_validation.jsonl"
-    output_path_train.parent.mkdir(parents=True, exist_ok=True)
-    output_path_test.parent.mkdir(parents=True, exist_ok=True)
-    output_path_validation.parent.mkdir(parents=True, exist_ok=True)
+    if TRAIN_PATH.exists() and TEST_PATH.exists() and VAL_PATH.exists():
+        print("Dataset already prepared. Skipping download.")
+    else:
+        print("Downloading dataset...")
+        dataset = load_dataset("SetFit/amazon_reviews_multi_en")
 
-    with output_path_train.open("w", encoding="utf-8") as file:
-        for item in dataset["train"]:
-            file.write(json.dumps(item, ensure_ascii=False) + "\n")
-    with output_path_test.open("w", encoding="utf-8") as file:
-        for item in dataset["test"]:
-            file.write(json.dumps(item, ensure_ascii=False) + "\n")
-    with output_path_validation.open("w", encoding="utf-8") as file:
-        for item in dataset["validation"]:
-            file.write(json.dumps(item, ensure_ascii=False) + "\n")
+        TRAIN_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    print(f"Saved raw data to {output_path_train}, {output_path_test}, and {output_path_validation}")
+        with TRAIN_PATH.open("w", encoding="utf-8") as f:
+            for x in dataset["train"]:
+                f.write(json.dumps(x) + "\n")
+
+        with TEST_PATH.open("w", encoding="utf-8") as f:
+            for x in dataset["test"]:
+                f.write(json.dumps(x) + "\n")
+
+        with VAL_PATH.open("w", encoding="utf-8") as f:
+            for x in dataset["validation"]:
+                f.write(json.dumps(x) + "\n")
 
 
 if __name__ == "__main__":
