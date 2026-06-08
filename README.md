@@ -50,8 +50,6 @@ No local setup required. Simply open the notebook in Google Colab and run the fi
 ## Running locally:
 
 
-### 1. Install Dependencies
-
 Install the required packages using `pip`. If you are installing globally outside of a virtual environment, you may need the `--break-system-packages` flag:
 
 ```bash
